@@ -9,7 +9,7 @@ Este projeto representa um sistema bancário utilizando threads e conceitos. O s
 - **Funcionários**: Representados por threads que recebem salários e investem parte deste em uma conta de investimentos.
 - **Clientes**: Cada cliente é representado como uma thread que realiza compras em lojas até que o saldo de sua conta esteja vazio.
 
-## Tecnologias Utilizadas
+## Tecnologia Utilizada
 
 - **Java 17**: Linguagem de programação utilizada para desenvolver o sistema.
 
