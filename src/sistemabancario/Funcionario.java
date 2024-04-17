@@ -7,19 +7,28 @@ public class Funcionario extends Thread {
 	Conta contaSalario = new Conta(0, TipoConta.corrente);
 	Conta contaInvestimento = new Conta(0, TipoConta.investimento);
 	Loja loja;
+	Banco banco;
 	
-	public Funcionario(String nome) {
-		this.nome=nome;
+	public Funcionario(String nome, Banco banco) {
+		this.nome = nome;
+		this.banco = banco;
 	}
 	
 	public void run() {
-		if(contaSalario.saldo >= 1400) {
-			contaInvestimento.adicionarSaldo(contaSalario.saldo * 0.2);
-			contaSalario.retirarSaldo(contaSalario.saldo * 0.2);
-		}
-		
-		if(loja.conta.saldo >= 1400) {
-			loja.pagarFuncionario(this);
-		}
+		while (true) {
+            try {
+                Thread.sleep(1000);
+                double salario = contaSalario.saldo;
+                if (salario > 0) {
+                    double investimento = salario * 0.2;
+                    banco.transferir(contaSalario, contaInvestimento, investimento);
+                    break;
+                }
+            } 
+            
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 	}
 }
