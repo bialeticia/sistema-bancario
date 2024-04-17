@@ -14,11 +14,19 @@ public class Cliente extends Thread {
 	}
 	
 	public void run() {
+		double valorCompra;
+		
+		if (Math.random() < 0.5) {
+            valorCompra = 100;
+        } else {
+            valorCompra = 200;
+        }
+		
 		while (conta.saldo > 0) {
             if (Math.random() < 0.5) {
-                lojaUm.processarCompra(this, 100);
+                lojaUm.processarCompra(this, valorCompra);
             } else {
-                lojaDois.processarCompra(this, 200);
+                lojaDois.processarCompra(this, valorCompra);
             }
         }
 	}

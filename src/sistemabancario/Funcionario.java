@@ -6,8 +6,8 @@ public class Funcionario extends Thread {
 	String nome;
 	Conta contaSalario = new Conta(0, TipoConta.corrente);
 	Conta contaInvestimento = new Conta(0, TipoConta.investimento);
-	Loja loja;
 	Banco banco;
+	boolean recebeuSalario = false;
 	
 	public Funcionario(String nome, Banco banco) {
 		this.nome = nome;
@@ -19,10 +19,11 @@ public class Funcionario extends Thread {
             try {
                 Thread.sleep(1000);
                 double salario = contaSalario.saldo;
-                if (salario > 0) {
+                if (salario > 0 && recebeuSalario) {
                     double investimento = salario * 0.2;
                     banco.transferir(contaSalario, contaInvestimento, investimento);
-                    break;
+                    recebeuSalario = false;
+                    System.out.println(nome + " transferiu para investimento o valor " + investimento);
                 }
             } 
             

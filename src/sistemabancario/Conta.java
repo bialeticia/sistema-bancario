@@ -19,11 +19,9 @@ public class Conta {
 		}
 		
 		this.saldo -= valorCompra;
-		System.out.println("Novo saldo: " + this.saldo);
 	}
 	
 	public synchronized void adicionarSaldo(double saldo) {
 		this.saldo += saldo;
-		System.out.println("Novo saldo: " + this.saldo);
 	}
 }
