@@ -2,8 +2,9 @@ package sistemabancario;
 import java.util.UUID;
 
 public class Cliente {
-	UUID id = new UUID.randomUUID();
+	UUID id = UUID.randomUUID();
 	String nome;
+	Conta conta = new Conta(1000);
 	
 	public Cliente(String nome) {
 		this.nome=nome;
