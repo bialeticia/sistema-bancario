@@ -13,7 +13,7 @@ public class Conta {
 		double valorCompra = saldo; 
 		
 		if(valorCompra>this.saldo) {
-			System.out.println("Compra negada: saldo insuficiente");
+			SincronizarPrints.log("Compra negada: saldo insuficiente");
 			
 			return;
 		}

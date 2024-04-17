@@ -28,6 +28,10 @@ public class Cliente extends Thread {
             } else {
                 lojaDois.processarCompra(this, valorCompra);
             }
+            
+            SincronizarPrints.log(nome + " fez uma compra " + valorCompra);
+            SincronizarPrints.log("Novo saldo: " + conta.saldo);
+    		
         }
 	}
 }

@@ -23,7 +23,7 @@ public class Funcionario extends Thread {
                     double investimento = salario * 0.2;
                     banco.transferir(contaSalario, contaInvestimento, investimento);
                     recebeuSalario = false;
-                    System.out.println(nome + " transferiu para investimento o valor " + investimento);
+                    SincronizarPrints.log(nome + " transferiu para investimento o valor " + investimento);
                 }
             } 
             

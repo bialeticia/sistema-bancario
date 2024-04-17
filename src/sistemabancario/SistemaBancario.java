@@ -23,7 +23,7 @@ public class SistemaBancario {
         
         Cliente[] clientes = new Cliente[5];
         for (int i = 0; i < clientes.length; i++) {
-            clientes[i] = new Cliente("Cliente" + i, lojaUm, lojaDois);
+            clientes[i] = new Cliente("Cliente " + i, lojaUm, lojaDois);
         }
         
         for (Funcionario funcionario : funcionarios) {
@@ -50,11 +50,11 @@ public class SistemaBancario {
             }
         }
 
-        System.out.println("Saldo final da Loja 1: " + lojaUm.conta.saldo);
-        System.out.println("Saldo final da Loja 2: " + lojaDois.conta.saldo);
+        SincronizarPrints.log("Saldo final da Loja 1: " + lojaUm.conta.saldo);
+        SincronizarPrints.log("Saldo final da Loja 2: " + lojaDois.conta.saldo);
         
         for (Funcionario funcionario : funcionarios) {
-        	System.out.println("Saldo final de Investimento" + funcionario.nome + ": " + funcionario.contaInvestimento.saldo);
+        	SincronizarPrints.log("Saldo final de Investimento" + funcionario.nome + ": " + funcionario.contaInvestimento.saldo);
         }       
     }
 }

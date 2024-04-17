@@ -19,8 +19,8 @@ public class Loja {
 	public void processarCompra(Cliente cliente, double valor) {
         banco.transferir(cliente.conta, this.conta, valor);
         verificarPagamentoFuncionarios();
-        System.out.println(nome + " recebe o valor " + valor);
-        System.out.println("Novo saldo: " + conta.saldo);
+        SincronizarPrints.log(nome + " recebe o valor " + valor);
+        SincronizarPrints.log("Novo saldo: " + conta.saldo);
     }
 	
 	private synchronized void verificarPagamentoFuncionarios() {
@@ -28,9 +28,9 @@ public class Loja {
         	for (Funcionario funcionario : funcionarios) {
                 banco.transferir(this.conta, funcionario.contaSalario, 1400);
                 funcionario.recebeuSalario = true;
-                System.out.println(funcionario.nome + " recebe " + 1400);
-                System.out.println("Novo saldo da loja: " + conta.saldo);
-                System.out.println("Novo saldo do funcionário: " + funcionario.contaSalario.saldo);
+                SincronizarPrints.log(funcionario.nome + " recebe " + 1400);
+                SincronizarPrints.log("Novo saldo da loja: " + conta.saldo);
+                SincronizarPrints.log("Novo saldo do funcionário: " + funcionario.contaSalario.saldo);
             }
         }
     }
