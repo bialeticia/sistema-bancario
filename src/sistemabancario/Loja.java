@@ -20,7 +20,7 @@ public class Loja {
         banco.transferir(cliente.conta, this.conta, valor);
         verificarPagamentoFuncionarios();
         SincronizarPrints.log(nome + " recebe o valor " + valor);
-        SincronizarPrints.log("Novo saldo: " + conta.saldo);
+        SincronizarPrints.log(nome + " novo saldo: " + conta.saldo);
     }
 	
 	private synchronized void verificarPagamentoFuncionarios() {

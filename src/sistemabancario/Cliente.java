@@ -30,7 +30,7 @@ public class Cliente extends Thread {
             }
             
             SincronizarPrints.log(nome + " fez uma compra " + valorCompra);
-            SincronizarPrints.log("Novo saldo: " + conta.saldo);
+            SincronizarPrints.log(nome + " novo saldo: " + conta.saldo);
     		
         }
 	}
