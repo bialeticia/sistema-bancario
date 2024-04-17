@@ -1,6 +1,6 @@
 package sistemabancario;
 
-public class Conta extends Thread {
+public class Conta {
 	int saldo;
 	TipoConta tipoConta;
 	
@@ -9,21 +9,21 @@ public class Conta extends Thread {
 		this.tipoConta = tipoConta;
 	}
 	
-	public void run() {
+	public synchronized void realizarCompra(int saldo) {
+		int valorCompra = saldo; 
 		
-	}
-	
-	public void realizarCompra() {
-		int valorCompra = 100; 
-		
-		if(valorCompra>saldo) {
+		if(valorCompra>this.saldo) {
 			System.out.println("Compra negada: saldo insuficiente");
 			
 			return;
 		}
 		
-		saldo -= valorCompra;
-		System.out.println("Novo saldo: " + saldo);
+		this.saldo -= valorCompra;
+		System.out.println("Novo saldo: " + this.saldo);
 	}
 	
+	public synchronized void adicionarSaldo(int saldo) {
+		this.saldo += saldo;
+		System.out.println("Novo saldo: " + this.saldo);
+	}
 }

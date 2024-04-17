@@ -1,7 +1,7 @@
 package sistemabancario;
 import java.util.UUID;
 
-public class Funcionario {
+public class Funcionario extends Thread {
 	UUID id = UUID.randomUUID();
 	String nome;
 	Conta contaSalario = new Conta(0, TipoConta.corrente);
@@ -11,4 +11,7 @@ public class Funcionario {
 		this.nome=nome;
 	}
 	
+	public void run() {
+		
+	}
 }
