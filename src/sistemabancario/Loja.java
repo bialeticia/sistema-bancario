@@ -10,9 +10,14 @@ public class Loja {
 		this.nome=nome;
 	}
 	
-	public void processarCompra(Cliente cliente, int valor) {
+	public void processarCompra(Cliente cliente, double valor) {
         Banco banco = new Banco();
         banco.transferir(cliente.conta, this.conta, valor);
+    }
+	
+	public void pagarFuncionario(Funcionario funcionario) {
+        Banco banco = new Banco();
+        banco.transferir(funcionario.contaSalario, this.conta, 1400);
     }
 	
 }

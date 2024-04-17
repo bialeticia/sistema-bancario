@@ -1,16 +1,16 @@
 package sistemabancario;
 
 public class Conta {
-	int saldo;
+	double saldo;
 	TipoConta tipoConta;
 	
-	public Conta(int saldo, TipoConta tipoConta) {
+	public Conta(double saldo, TipoConta tipoConta) {
 		this.saldo = saldo;
 		this.tipoConta = tipoConta;
 	}
 	
-	public synchronized void realizarCompra(int saldo) {
-		int valorCompra = saldo; 
+	public synchronized void retirarSaldo(double saldo) {
+		double valorCompra = saldo; 
 		
 		if(valorCompra>this.saldo) {
 			System.out.println("Compra negada: saldo insuficiente");
@@ -22,7 +22,7 @@ public class Conta {
 		System.out.println("Novo saldo: " + this.saldo);
 	}
 	
-	public synchronized void adicionarSaldo(int saldo) {
+	public synchronized void adicionarSaldo(double saldo) {
 		this.saldo += saldo;
 		System.out.println("Novo saldo: " + this.saldo);
 	}
