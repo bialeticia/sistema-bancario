@@ -27,7 +27,7 @@ public class SistemaBancario {
         }
         
         for (Funcionario funcionario : funcionarios) {
-        	funcionario.start();
+        funcionario.start();
         }
         
         for (Cliente cliente : clientes) {
@@ -43,8 +43,12 @@ public class SistemaBancario {
         }
         
         for (Funcionario funcionario : funcionarios) {
+            funcionario.desativar();
+        }
+        
+        for (Funcionario funcionario : funcionarios) {
             try {
-            	funcionario.join();
+            funcionario.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -54,7 +58,7 @@ public class SistemaBancario {
         SincronizarPrints.log("Saldo final da Loja 2: " + lojaDois.conta.saldo);
         
         for (Funcionario funcionario : funcionarios) {
-        	SincronizarPrints.log("Saldo final de Investimento" + funcionario.nome + ": " + funcionario.contaInvestimento.saldo);
+        SincronizarPrints.log("Saldo final de Investimento" + funcionario.nome + ": " + funcionario.contaInvestimento.saldo);
         }       
     }
 }
