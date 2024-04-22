@@ -58,7 +58,7 @@ public class SistemaBancario {
         SincronizarPrints.log("Saldo final da Loja 2: " + lojaDois.conta.saldo);
         
         for (Funcionario funcionario : funcionarios) {
-        SincronizarPrints.log("Saldo final de Investimento" + funcionario.nome + ": " + funcionario.contaInvestimento.saldo);
+        SincronizarPrints.log("Saldo final de Investimento " + funcionario.nome + ": " + funcionario.contaInvestimento.saldo);
         }       
     }
 }
